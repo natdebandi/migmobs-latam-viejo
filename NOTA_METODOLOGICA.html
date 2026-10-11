@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>NOTA_METODOLOGICA</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">
+:root {
+--texto: #1a1a1a;
+--secundario: #5a5a5a;
+--borde: #dcdcdc;
+--fondo-suave: #f7f7f5;
+--acento: #2a5d8f;
+--max: 46rem;
+}
+html {
+font-size: 17px;
+-webkit-text-size-adjust: 100%;
+}
+body {
+font-family: "Source Serif 4", "Charter", "Bitstream Charter", "Georgia", serif;
+color: var(--texto);
+background: #fff;
+line-height: 1.62;
+max-width: var(--max);
+margin: 0 auto;
+padding: 3.5rem 1.6rem 6rem;
+hyphens: auto;
+text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: "Inter", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+font-weight: 600;
+line-height: 1.25;
+letter-spacing: -0.011em;
+margin: 2.4em 0 0.7em;
+color: #111;
+}
+h1 {
+font-size: 1.9rem;
+margin-top: 0;
+padding-bottom: 0.55rem;
+border-bottom: 2px solid var(--texto);
+}
+h2 {
+font-size: 1.42rem;
+padding-bottom: 0.35rem;
+border-bottom: 1px solid var(--borde);
+}
+h3 { font-size: 1.14rem; }
+h4 { font-size: 1rem; color: var(--secundario); text-transform: none; }
+
+p { margin: 0 0 1.05em; }
+strong { font-weight: 650; }
+a {
+color: var(--acento);
+text-decoration: none;
+border-bottom: 1px solid rgba(42, 93, 143, 0.3);
+}
+a:hover { border-bottom-color: var(--acento); }
+
+ul, ol { margin: 0 0 1.1em; padding-left: 1.5em; }
+li { margin-bottom: 0.35em; }
+li > ul, li > ol { margin-top: 0.35em; margin-bottom: 0.35em; }
+
+table {
+border-collapse: collapse;
+width: 100%;
+margin: 1.5em 0;
+font-size: 0.92rem;
+font-family: "Inter", system-ui, sans-serif;
+font-variant-numeric: tabular-nums;
+}
+thead { background: var(--fondo-suave); }
+th {
+text-align: left;
+font-weight: 600;
+padding: 0.6em 0.75em;
+border-bottom: 2px solid var(--texto);
+vertical-align: bottom;
+}
+td {
+padding: 0.5em 0.75em;
+border-bottom: 1px solid var(--borde);
+vertical-align: top;
+}
+tbody tr:hover { background: #fafaf8; }
+
+th[style*="text-align: right"], td[style*="text-align: right"] {
+text-align: right;
+}
+
+code {
+font-family: "JetBrains Mono", "Fira Code", "SF Mono", Menlo, monospace;
+font-size: 0.86em;
+background: var(--fondo-suave);
+padding: 0.12em 0.35em;
+border-radius: 3px;
+}
+pre {
+background: var(--fondo-suave);
+border: 1px solid var(--borde);
+border-radius: 5px;
+padding: 1em 1.1em;
+overflow-x: auto;
+font-size: 0.85rem;
+line-height: 1.5;
+}
+pre code { background: none; padding: 0; font-size: 1em; }
+
+blockquote {
+margin: 1.4em 0;
+padding: 0.2em 0 0.2em 1.15em;
+border-left: 3px solid var(--acento);
+color: var(--secundario);
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+hr {
+border: 0;
+border-top: 1px solid var(--borde);
+margin: 2.8em 0;
+}
+
+nav#TOC, #TOC {
+background: var(--fondo-suave);
+border: 1px solid var(--borde);
+border-radius: 6px;
+padding: 1.1em 1.4em 1.1em 0;
+margin: 2em 0 2.6em;
+font-family: "Inter", system-ui, sans-serif;
+font-size: 0.88rem;
+}
+#TOC::before {
+content: "Contenido";
+display: block;
+font-weight: 650;
+margin: 0 0 0.6em 1.6em;
+font-size: 0.78rem;
+text-transform: uppercase;
+letter-spacing: 0.06em;
+color: var(--secundario);
+}
+#TOC ul { list-style: none; padding-left: 1.6em; margin: 0; }
+#TOC > ul > li { margin-bottom: 0.25em; }
+#TOC ul ul { padding-left: 1.2em; }
+#TOC a { border-bottom: none; color: var(--texto); }
+#TOC a:hover { color: var(--acento); }
+
+h1 + p, h1 + nav + p { font-size: 1.04rem; color: var(--secundario); }
+
+@media print {
+html { font-size: 11pt; }
+body { max-width: none; padding: 0; }
+#TOC { page-break-after: always; }
+h1, h2, h3 { page-break-after: avoid; }
+table, pre, blockquote { page-break-inside: avoid; }
+a { color: var(--texto); border-bottom: none; }
+}
+
+@media (max-width: 640px) {
+html { font-size: 16px; }
+body { padding: 2rem 1rem 4rem; }
+table { font-size: 0.84rem; }
+th, td { padding: 0.45em 0.5em; }
+}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">NOTA_METODOLOGICA</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#nota-metodológica--emigración-venezolana-en-américa" id="toc-nota-metodológica--emigración-venezolana-en-américa">Nota
+metodológica — emigración venezolana en América</a>
+<ul>
+<li><a href="#1-qué-mide-cada-fuente" id="toc-1-qué-mide-cada-fuente">1.
+Qué mide cada fuente</a></li>
+<li><a href="#2-de-dónde-salió-la-serie-de-r4v" id="toc-2-de-dónde-salió-la-serie-de-r4v">2. De dónde salió la serie de
+R4V</a></li>
+<li><a href="#3-los-problemas-de-datos-en-orden-de-gravedad" id="toc-3-los-problemas-de-datos-en-orden-de-gravedad">3. Los problemas
+de datos, en orden de gravedad</a>
+<ul>
+<li><a href="#31-el-salto-de-2018-y-por-qué-la-etiqueta-del-año-engaña" id="toc-31-el-salto-de-2018-y-por-qué-la-etiqueta-del-año-engaña">3.1 El
+salto de 2018, y por qué la etiqueta del año engaña</a></li>
+<li><a href="#32-el-corte-de-2024-en-los-flujos" id="toc-32-el-corte-de-2024-en-los-flujos">3.2 El corte de 2024 en los
+flujos</a></li>
+<li><a href="#33-el-stock-es-un-piso" id="toc-33-el-stock-es-un-piso">3.3 El stock es un piso</a></li>
+</ul></li>
+<li><a href="#4-los-tres-períodos-y-la-justificación-de-los-cortes" id="toc-4-los-tres-períodos-y-la-justificación-de-los-cortes">4. Los
+tres períodos y la justificación de los cortes</a>
+<ul>
+<li><a href="#qué-significa-acumular-un-período" id="toc-qué-significa-acumular-un-período">Qué significa acumular un
+período</a></li>
+</ul></li>
+<li><a href="#5-el-sistema-regional-de-19-países" id="toc-5-el-sistema-regional-de-19-países">5. El sistema regional de 19
+países</a>
+<ul>
+<li><a href="#por-qué-dos-porcentajes-y-no-uno" id="toc-por-qué-dos-porcentajes-y-no-uno">Por qué dos porcentajes y no
+uno</a></li>
+<li><a href="#umbral-de-los-radiales-regionales" id="toc-umbral-de-los-radiales-regionales">Umbral de los radiales
+regionales</a></li>
+<li><a href="#el-resaltado-de-venezuela-dice-una-cosa-y-no-otra" id="toc-el-resaltado-de-venezuela-dice-una-cosa-y-no-otra">El resaltado
+de Venezuela dice una cosa y no otra</a></li>
+</ul></li>
+<li><a href="#6-venezuela-y-los-regímenes-de-libre-movilidad" id="toc-6-venezuela-y-los-regímenes-de-libre-movilidad">6. Venezuela y
+los regímenes de libre movilidad</a>
+<ul>
+<li><a href="#qué-mide-cada-dummy" id="toc-qué-mide-cada-dummy">Qué mide
+cada dummy</a></li>
+<li><a href="#la-exclusión-de-fmr_mercosur_can" id="toc-la-exclusión-de-fmr_mercosur_can">La exclusión de
+<code>FMR_Mercosur_CAN</code></a></li>
+<li><a href="#sobre-qué-panel-se-aplica" id="toc-sobre-qué-panel-se-aplica">Sobre qué panel se aplica</a></li>
+<li><a href="#el-lugar-de-venezuela-en-el-andamiaje-multilateral" id="toc-el-lugar-de-venezuela-en-el-andamiaje-multilateral">El lugar de
+Venezuela en el andamiaje multilateral</a></li>
+<li><a href="#puntos-discutibles-de-la-codificación" id="toc-puntos-discutibles-de-la-codificación">Puntos discutibles de la
+codificación</a></li>
+</ul></li>
+<li><a href="#7-decisiones-de-representación" id="toc-7-decisiones-de-representación">7. Decisiones de
+representación</a>
+<ul>
+<li><a href="#la-escala-de-los-globos-del-mapa-animado" id="toc-la-escala-de-los-globos-del-mapa-animado">La escala de los
+globos del mapa animado</a></li>
+<li><a href="#paleta" id="toc-paleta">Paleta</a></li>
+</ul></li>
+<li><a href="#8-cobertura" id="toc-8-cobertura">8. Cobertura</a></li>
+<li><a href="#9-qué-se-construyó" id="toc-9-qué-se-construyó">9. Qué se
+construyó</a></li>
+<li><a href="#10-reproducibilidad" id="toc-10-reproducibilidad">10.
+Reproducibilidad</a></li>
+<li><a href="#11-pendientes" id="toc-11-pendientes">11.
+Pendientes</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="nota-metodológica--emigración-venezolana-en-américa">Nota
+metodológica — emigración venezolana en América</h1>
+<p>Documento de respaldo del tablero
+<code>output/tablero_venezolanos.html</code>. Todo lo que condiciona la
+lectura de las cifras está acá: qué mide cada fuente, de dónde salen los
+datos, cómo se recortaron, qué convenciones se adoptaron y qué queda sin
+resolver. El tablero se lee solo; esta nota se consulta cuando hace
+falta el detalle.</p>
+<p>Última actualización: 11 de octubre de 2026.</p>
+<h2 id="1-qué-mide-cada-fuente">1. Qué mide cada fuente</h2>
+<p>El proyecto combina tres fuentes que describen el mismo fenómeno
+desde ángulos distintos y que <strong>no son intercambiables</strong>.
+Se presentan en secciones separadas por ese motivo.</p>
+<p><strong>Abel 2025</strong> (Gaskin y Abel, <em>Deep learning four
+decades of human migration</em>) estima flujos bilaterales anuales de
+migración, es decir, cuántas personas cambian de país de residencia en
+un año. El archivo local <code>mig_bilateral_abel_2025.csv</code> trae
+231 orígenes y cubre 1990–2024, con dos variantes: <code>mig_prev</code>
+(movimiento entre países de residencia) y <code>mig_brth</code> (por
+país de nacimiento). Este proyecto usa
+<strong><code>mig_prev</code></strong>. Sobre los 702 corredores de
+América Latina las dos series correlacionan 0,95 en logaritmos, pero el
+ratio mediano es 1,78 y 114 corredores caen del otro lado, de modo que
+no se corrige con una constante. La elección tiene que quedar declarada
+en cualquier texto que salga de acá.</p>
+<p><strong>R4V</strong> publica la población venezolana registrada por
+cada país de acogida, en frecuencia mensual. No estima flujos: es un
+stock administrativo, el resultado de acumular registros migratorios,
+permisos y censos.</p>
+<p><strong>Censos nacionales</strong> (INDEC Argentina 2010 y 2022, INE
+Chile 2024) dan stock por lugar de nacimiento, con desagregación por
+sexo, edad, educación y año de llegada. Es la medición más dura de las
+tres porque cuenta personas y no registros administrativos.</p>
+<p>La diferencia entre las dos primeras importa para cualquier lectura:
+el flujo de un año puede bajar mientras el stock sigue subiendo, porque
+el stock es la suma histórica de las entradas menos las salidas, y las
+salidas casi nunca se registran. <strong>Las dos medidas no se suman ni
+se restan entre sí.</strong> El tablero las presenta en secciones
+separadas y ninguna cifra las combina.</p>
+<h2 id="2-de-dónde-salió-la-serie-de-r4v">2. De dónde salió la serie de
+R4V</h2>
+<p>r4v.info no ofrece endpoint de datos ni planilla descargable de la
+serie histórica. La serie completa está embebida en el gráfico de
+Flourish que la propia plataforma inserta en su página de refugiados y
+migrantes (visualización 6378458, «Stock_race», autor IMOS Regional,
+publicada el 20/08/2026).</p>
+<p><code>src/descargar_r4v.py</code> baja ese JSON y lo convierte a
+formato largo. La verificación de que los números son los oficiales se
+hizo contra el mapa de stock de mayo de 2026 que R4V publica en PDF: las
+cifras por país coinciden.</p>
+<p>El total del último mes informado (agosto de 2026) es
+<strong>6.972.942</strong> personas en 17 países. La página de R4V
+informa 6.978.009 con la actualización de agosto, una diferencia de
+5.067 personas que no se pudo atribuir a un país puntual; probablemente
+el sitio sume una fuente que el gráfico no incluye. Queda anotado.</p>
+<h2 id="3-los-problemas-de-datos-en-orden-de-gravedad">3. Los problemas
+de datos, en orden de gravedad</h2>
+<h3 id="31-el-salto-de-2018-y-por-qué-la-etiqueta-del-año-engaña">3.1 El
+salto de 2018, y por qué la etiqueta del año engaña</h3>
+<p>La serie de Abel 2025 registra 306.000 personas emigradas de
+Venezuela en 2017 y <strong>2.598.000 en 2018</strong>: más de ocho
+veces más en un año. La primera lectura es que el modelo falló. La
+verificación dice otra cosa.</p>
+<p><strong>El flujo que el archivo etiqueta como año <code>t</code>
+corresponde al cambio de stock entre <code>t</code> y
+<code>t+1</code>.</strong> No es el año calendario del movimiento: es
+una convención de rezago en la etiqueta. Tres evidencias
+convergentes.</p>
+<p>Sobre 210 corredores grandes del archivo, el flujo de <code>t</code>
+correlaciona mejor con el cambio de stock <code>t → t+1</code> que con
+el de <code>t-1 → t</code>: gana en 175 de 210 casos, con correlación
+media 0,677 contra 0,474. En el caso venezolano, la razón entre el flujo
+y el cambio de stock del año siguiente es <strong>1,04 en 2018 y 1,09 en
+2019</strong>, prácticamente uno, mientras que contra el cambio del
+mismo año da 11,4 y 0,69. Y la comparación con R4V, que es una fuente
+independiente y administrativa, confirma el movimiento: el stock
+regional pasa de 1,23 millones en febrero de 2018 a 3,94 millones en
+diciembre de 2019, y el grueso del crecimiento cae <strong>en
+2019</strong>, no en 2018.</p>
+<p>Las dos consecuencias prácticas. La primera es que reportar «2018»
+como el año del éxodo está mal fechado: el movimiento que la serie
+atribuye a 2018 ocurrió entre 2018 y 2019. La segunda es que el salto no
+se corrige reescalando, porque no hay error de magnitud; se corrige
+declarando la convención. Las salidas honestas son dos: tratar 2018 y
+2019 como un bienio, o rotular la serie con la convención explícita. El
+tablero toma la primera: el aviso de lectura del cuerpo remite al bienio
+2018–2019 y esta nota desarrolla la verificación.</p>
+<p>El bienio suma 3,97 millones en Abel contra 2,71 millones de
+crecimiento del registro de R4V. La diferencia no es contradicción. Abel
+estima entradas brutas; el stock registrado es un saldo, entradas menos
+salidas, y las salidas casi nunca se registran. Abel tiene que dar más,
+y da más.</p>
+<p>Queda un problema de magnitud que la verificación no resuelve: la
+incertidumbre que el propio modelo declara es estrecha para 2018 y 2019
+(coeficiente de variación 0,20 y 0,17) frente a la de los años vecinos
+(0,39 y 0,43 en 2017 y 2020). En el año que concentra el ajuste, el
+modelo se declara más seguro que en los años normales, lo que es
+contraintuitivo. Puede ser correcto o puede ser un efecto de cómo se
+propaga la incertidumbre del stock. Queda anotado.</p>
+<h3 id="32-el-corte-de-2024-en-los-flujos">3.2 El corte de 2024 en los
+flujos</h3>
+<p>El archivo de Abel 2025 llega a 2024, pero las columnas
+<code>mig_prev</code> y <code>mig_brth</code> están
+<strong>completamente vacías</strong> para ese año: 0 de 53.361 filas
+con dato, mientras el stock sí está completo. La serie de flujos termina
+de hecho en 2023. El tablero no muestra 2024 para no dibujar un cero que
+no es un cero.</p>
+<h3 id="33-el-stock-es-un-piso">3.3 El stock es un piso</h3>
+<p>Las cifras de R4V cuentan personas registradas o estimadas por los
+gobiernos de acogida. La propia plataforma advierte que muchas fuentes
+nacionales no incluyen a las personas venezolanas sin estatus regular,
+de modo que el total es más bajo que la población real. Además, cada
+gobierno publica con su propia frecuencia y metodología, así que una
+variación entre dos meses puede reflejar el calendario de publicación
+antes que llegadas nuevas.</p>
+<h2 id="4-los-tres-períodos-y-la-justificación-de-los-cortes">4. Los
+tres períodos y la justificación de los cortes</h2>
+<p>El tablero corta la serie en tres períodos y no en años sueltos. El
+corte no es cronológico sino institucional:</p>
+<table>
+<thead>
+<tr>
+<th>Período</th>
+<th>Criterio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1995–2002</strong></td>
+<td>dinámica regional previa a los acuerdos de residencia</td>
+</tr>
+<tr>
+<td><strong>2003–2014</strong></td>
+<td>acuerdos de residencia del MERCOSUR y Decisión 545 de la CAN</td>
+</tr>
+<tr>
+<td><strong>2015–2023</strong></td>
+<td>el éxodo venezolano</td>
+</tr>
+</tbody>
+</table>
+<p>El primer período arranca en 1995 y no en 1990, que es donde arranca
+la serie de flujos, porque 1995 es el primer año de la codificación de
+regímenes de libre movilidad. Los tres recortes tienen que ser
+comparables entre fuentes, y si un período empezara antes de que exista
+la codificación de regímenes, la comparación entre el bloque de flujos y
+el bloque de regímenes dejaría de ser válida.</p>
+<p>Los cortes están declarados en la constante <code>PERIODOS</code> de
+<code>src/tablero.py</code> y en <code>PERIODOS</code> de
+<code>src/radial_periodos.R</code>. <strong>Cambiar uno sin el otro
+descuadra los radiales contra los mapas</strong>: los sectores y las
+etiquetas de período se generan en R y se embeben como SVG, así que un
+corte que no coincida produce figuras de períodos distintos en la misma
+sección.</p>
+<h3 id="qué-significa-acumular-un-período">Qué significa acumular un
+período</h3>
+<p>Todas las cifras por período son <strong>personas-año</strong>: la
+suma de los flujos anuales de los años que abarca el período. No es un
+stock de personas. Alguien que cambió de residencia dos veces dentro del
+período cuenta dos veces, y el mismo destino puede recibir a la misma
+persona en años distintos. Es la convención correcta para comparar
+volúmenes de movimiento entre períodos, pero no es una cantidad de
+personas.</p>
+<h2 id="5-el-sistema-regional-de-19-países">5. El sistema regional de 19
+países</h2>
+<p>Las secciones 1, 3, 4, 5 y 6 miran a Venezuela como origen único. Eso
+mide el éxodo, pero no deja ver en qué sistema ocurre ni cuánto pesa
+dentro de él, y ese es justamente el hallazgo: Venezuela pasa de ser el
+3,6 % del flujo regional a ser el 30,2 %. La sección 2 del tablero la
+pone adentro del sistema.</p>
+<p>El sistema son <strong>19 países</strong>: los 12 sudamericanos
+(Argentina, Bolivia, Brasil, Chile, Colombia, Ecuador, Guyana, Paraguay,
+Perú, Surinam, Uruguay y Venezuela) más Estados Unidos, España, México,
+Panamá, República Dominicana, Costa Rica y Canadá. Se excluyen los
+flujos internos (<code>orig == dest</code>), que no son migración.</p>
+<p><strong>El sistema es cerrado.</strong> Solo se cuentan los flujos
+<em>entre</em> esos 19 países, no los que van hacia el resto del mundo.
+Por eso los totales regionales son menores que el total mundial del
+archivo de Abel, y por eso el porcentaje que se informa es «cuánto de
+este sistema» y no «cuánto del mundo». La definición del recorte vive en
+un solo lugar, <code>src/panel_regional.py</code>, y el tablero la
+consume desde ahí.</p>
+<p>El flujo <strong>hacia</strong> Venezuela se informa por separado y
+<strong>nunca se suma</strong> al de salida. El porcentaje de
+participación se calcula solo sobre la salida: sumarle el retorno
+escondería que entre 2000 y 2009 el país fue receptor neto, que es
+justamente lo que matiza la lectura de «receptor a expulsor». Sumar los
+dos da 6,7 % en el primer período en vez de 3,6 %, y ese número no
+significa nada.</p>
+<h3 id="por-qué-dos-porcentajes-y-no-uno">Por qué dos porcentajes y no
+uno</h3>
+<p>La participación de Venezuela se informa sobre dos denominadores
+distintos: el sistema de 19 (3,6 % → 30,2 %) y solo Sudamérica entre sí
+(10,2 % → 59,5 %). No son alternativas ni una es más correcta que la
+otra; responden preguntas distintas. En el sistema de 19 pesan Estados
+Unidos y España, que se llevan una parte grande del flujo sudamericano y
+diluyen la fracción venezolana. Dentro de Sudamérica el peso es mucho
+mayor. Informar solo el primero subestimaría el fenómeno regional;
+informar solo el segundo ocultaría que el sistema relevante incluye los
+destinos del norte. Las figuras rotulan cuál es cuál.</p>
+<h3 id="umbral-de-los-radiales-regionales">Umbral de los radiales
+regionales</h3>
+<p>Con 19 sectores y los 342 corredores del sistema el chord es ilegible
+y cada SVG pesa unos 880 KB. Se dibujan solo los corredores con flujo
+<strong>≥ 5.000 personas-año</strong>. El umbral es <strong>absoluto y
+el mismo en los tres períodos</strong>: con un umbral relativo cada
+período tendría su propio corte y la comparación entre los tres dejaría
+de ser válida.</p>
+<table>
+<thead>
+<tr>
+<th>Período</th>
+<th>Corredores dibujados</th>
+<th>Cobertura del flujo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1995–2002</td>
+<td>143 de 342</td>
+<td>97,3 %</td>
+</tr>
+<tr>
+<td>2003–2014</td>
+<td>197 de 342</td>
+<td>98,9 %</td>
+</tr>
+<tr>
+<td>2015–2023</td>
+<td>197 de 342</td>
+<td>99,2 %</td>
+</tr>
+</tbody>
+</table>
+<p>Los descartados suman menos del 3 % del flujo en todos los casos.
+Cuántos corredores entran y cuánto flujo representan se declara al pie
+de cada radial, tomado del resumen que escribe
+<code>src/radial_regional.R</code> y no de una constante escrita a
+mano.</p>
+<p>El resaltado de los corredores venezolanos se dibuja con
+<code>link.sort = FALSE</code>. No es un detalle de estilo: con las
+cintas ordenadas, circlize reordena el vector de colores y el rojo deja
+de corresponder al corredor correcto. El color se asigna en el orden de
+las filas del data frame y se conserva solo sin ordenamiento; se
+verificó midiendo el área roja dibujada contra la fracción de flujo
+venezolano (30,74 % contra 30,44 %).</p>
+<h3 id="el-resaltado-de-venezuela-dice-una-cosa-y-no-otra">El resaltado
+de Venezuela dice una cosa y no otra</h3>
+<p>Venezuela aparece en rojo en los dos radiales, pero el rojo significa
+cosas distintas en cada uno. En el chord regional marca los corredores
+<strong>con origen Venezuela</strong>, que son el objeto del tablero. En
+el radial de la estrella, donde Venezuela es el origen único, marca el
+sector de origen y no un destino privilegiado. La distinción importa
+para no leer una jerarquía de destinos donde solo hay un origen
+compartido.</p>
+<h2 id="6-venezuela-y-los-regímenes-de-libre-movilidad">6. Venezuela y
+los regímenes de libre movilidad</h2>
+<p>Los regímenes de libre movilidad (FMR) vienen de la codificación de
+Tobias Grohmann sobre el Free Movement Regimes Dataset, extraída por el
+proyecto <code>movilidades_regionales</code> a
+<code>~/investigacion/datos/Regimenes_FMR/regimenes_fmr_corredor_anio.csv</code>
+(4.368 filas, 156 corredores, 1995–2022). El tablero lo lee en el lugar:
+ese directorio es de solo lectura y el derivado no se copia al repo.</p>
+<p><strong>La codificación es desde el destino.</strong> Vale 1 si el
+país de destino aplica libre movilidad a los nacionales del país de
+origen. No es una propiedad simétrica del par.</p>
+<h3 id="qué-mide-cada-dummy">Qué mide cada dummy</h3>
+<table>
+<thead>
+<tr>
+<th>Dummy</th>
+<th>Régimen</th>
+<th>Cobertura</th>
+<th>Celdas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>argfmrs</code></td>
+<td>Bilaterales argentinos</td>
+<td>ARG↔︎BOL 1999–2016, ARG↔︎PER 2000–, ARG↔︎BRA 2006–, ARG↔︎URY 2006–</td>
+<td>150</td>
+</tr>
+<tr>
+<td><code>mercosur1</code></td>
+<td>MERCOSUR fundadores</td>
+<td>ARG, BRA, PRY, URY entre sí, desde 2009</td>
+<td>168</td>
+</tr>
+<tr>
+<td><code>mercosur2</code></td>
+<td>MERCOSUR ampliado</td>
+<td>fundadores + BOL, CHL, PER, COL, ECU desde años escalonados</td>
+<td>659</td>
+</tr>
+<tr>
+<td><code>can1</code></td>
+<td>CAN, Decisión 545</td>
+<td>BOL, COL, ECU, PER entre sí, 2003–2020</td>
+<td>216</td>
+</tr>
+<tr>
+<td><code>can2</code></td>
+<td>CAN, Decisión 878</td>
+<td>BOL, COL, ECU, PER entre sí, desde 2021</td>
+<td>24</td>
+</tr>
+<tr>
+<td><code>ecuven</code></td>
+<td>Ecuador–Venezuela</td>
+<td>asimétrico: ECU→VEN 2011–2020, VEN→ECU 2011–</td>
+<td>22</td>
+</tr>
+<tr>
+<td><code>braury</code></td>
+<td>Brasil–Uruguay</td>
+<td>simétrico, desde 2017</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<p><code>FMR_all</code> es la unión de los siete componentes: 1.021
+celdas activas, verificada sin discrepancias en ninguna de las 4.368
+filas.</p>
+<h3 id="la-exclusión-de-fmr_mercosur_can">La exclusión de
+<code>FMR_Mercosur_CAN</code></h3>
+<p>El archivo trae tres variables agregadas: <code>FMR_all</code>,
+<code>FMR_Mercosur</code> (827 celdas) y <code>FMR_Mercosur_CAN</code>
+(827 celdas). <strong><code>FMR_Mercosur_CAN</code> no es una variable
+distinta.</strong> Es idéntica a <code>FMR_Mercosur</code> en las 4.368
+filas, porque las 24 celdas de <code>can2</code> ya están cubiertas por
+<code>mercosur2</code> (que incluye Colombia desde 2012 y Ecuador desde
+2014): las celdas con <code>can2 == 1 &amp; mercosur2 == 0</code> son
+cero. La intención documentada era sumar la CAN comprehensiva, pero
+sobre los diez países del panel no agrega ni una celda.</p>
+<p>El tablero muestra la unión (<code>FMR_all</code>) y los siete
+componentes por separado, y no grafica las dos agregadas redundantes
+para no presentar como dos variables lo que es una sola. Cuando en el
+tablero hace falta aislar MERCOSUR, se usa <code>FMR_Mercosur</code>. La
+diferencia entre <code>FMR_all</code> y <code>FMR_Mercosur</code> son
+194 filas: los bilaterales argentinos, que no están en MERCOSUR.</p>
+<h3 id="sobre-qué-panel-se-aplica">Sobre qué panel se aplica</h3>
+<p>El panel de flujos tiene un solo origen, Venezuela, y sobre ese
+recorte el único régimen vigente en la ventana es el acuerdo
+Ecuador–Venezuela, que además es asimétrico (ECU→VEN rige 2011–2020,
+VEN→ECU desde 2011). De los 24 corredores que tocan a Venezuela, solo 2
+reciben tratamiento. Colombia y Perú, los dos destinos que concentraron
+la mayor parte del éxodo, no tuvieron régimen de libre movilidad con
+Venezuela en ningún año de la ventana. Los regímenes que sí se activaron
+—MERCOSUR y CAN— son entre terceros países, y entran en el tablero como
+contexto regional, no como tratamiento de los corredores que el tablero
+mide.</p>
+<h3 id="el-lugar-de-venezuela-en-el-andamiaje-multilateral">El lugar de
+Venezuela en el andamiaje multilateral</h3>
+<p>Un dato que ordena la lectura política de la serie. El archivo
+consolidado de regímenes que usaba el laboratorio antes de esta
+codificación
+(<code>~/investigacion/datos/Freemove/freemove_230425.csv</code>, 4.020
+filas) contenía solo tres regímenes —el bilateral Argentina-Bolivia, el
+Mercosur y el Mercosur ampliado a Bolivia y Chile— y la búsqueda textual
+de «Venezuela» devolvía cero coincidencias. En la codificación corredor
+× año que usa el tablero, en cambio, Venezuela aparece por el régimen
+bilateral con Ecuador (<code>ecuven</code>).</p>
+<p>El matiz, que conviene no perder, es que la carpeta del dataset
+contiene además diez planillas con el detalle de cada régimen, y dos de
+ellas mencionan a Venezuela. La primera es
+<code>Regime 6. Ecuador Venezuela Website October 2024.xlsx</code>, que
+codifica el régimen bilateral sobre el Estatuto Migratorio de 2010, con
+vigencia registrada de 2012 a 2024. La segunda es
+<code>Regime 10. Andean Community Website October 2024.xlsx</code>, y en
+la especificación de la Decisión 545 documenta que Venezuela salió de la
+Comunidad Andina en 2006, de modo que esa decisión nunca se aplicó a los
+venezolanos en los otros cuatro Estados miembros.</p>
+<p>La formulación correcta, entonces, no es que Venezuela esté ausente
+en términos absolutos, sino que quedó al margen del andamiaje
+multilateral: denunció la Comunidad Andina y fue suspendida del Mercosur
+el 1 de diciembre de 2016, por aplicación del artículo 5 del Protocolo
+de Ushuaia. Lo que rigió para la población venezolana durante la crisis
+fue, sobre todo, la decisión unilateral de cada país receptor, más el
+régimen bilateral con Ecuador. Las medidas de protección que se ven en
+el tablero no son la aplicación de un tratado regional: son política
+doméstica de cada Estado. El detalle está en
+<code>INFORME_medidas_venezuela.md</code>.</p>
+<h3 id="puntos-discutibles-de-la-codificación">Puntos discutibles de la
+codificación</h3>
+<p>Estos cortes son decisiones de codificación y no hechos, y están
+documentados como revisables en la notebook de revisión pendiente:</p>
+<ul>
+<li>MERCOSUR arranca en 2009 en esta codificación, aunque el Acuerdo de
+Residencia del MERCOSUR es de 2002 y <code>datos/Freemove/</code>
+registra 2010 para algunos corredores.</li>
+<li><code>mercosur2</code> incluye a Colombia (2012) y Ecuador (2014),
+que son estados asociados y no miembros plenos. Tratarlos como tratados
+es una decisión.</li>
+<li>ARG↔︎BOL se corta en 2016 y no en 2009, cuando el corredor pasa a
+estar cubierto por MERCOSUR. Los regímenes se solapan y eso no cambia
+<code>FMR_all</code>, pero importa para leer régimen por régimen.</li>
+<li><code>braury</code> arranca en 2017, con el acuerdo firmado en
+2013.</li>
+<li>ARG↔︎PRY nunca entró en vigor (firmado, no ratificado) y por eso no
+tiene dummy propia: Paraguay aparece solo vía MERCOSUR.</li>
+</ul>
+<h2 id="7-decisiones-de-representación">7. Decisiones de
+representación</h2>
+<p><strong>Los flujos se dibujan con el ancho proporcional a la raíz del
+valor.</strong> Con ancho lineal Colombia tapa a Paraguay y el mapa deja
+de ser legible. El costo es que las diferencias visuales no son
+proporcionales a las diferencias reales; por eso cada arco declara su
+cifra al pasar el mouse y las series usan escala real.</p>
+<p><strong>En los mapas por período el ancho es relativo al mayor flujo
+del propio período.</strong> Comparar el tamaño de los nodos entre mapas
+es un error: el mapa de 1995–2002 quedaría invisible frente al de
+2015–2023, que es veinte veces más grande. La magnitud se lee en las
+series y en el subtítulo de cada mapa.</p>
+<p><strong>España queda fuera de la ventana del mapa</strong> y su valor
+se informa en el subtítulo. Sin esa aclaración el total de los arcos no
+cerraría contra el total del panel. La verificación da diferencia menor
+a una persona por año, atribuible al redondeo de las etiquetas.</p>
+<p><strong>La geometría va simplificada</strong> a 0,1° de tolerancia,
+de unos 28.000 puntos a unos 6.000. A la escala del tablero no se
+distingue, y sin eso el archivo pasaba de 10 MB porque el contorno de
+los países se repite en cada figura.</p>
+<h3 id="la-escala-de-los-globos-del-mapa-animado">La escala de los
+globos del mapa animado</h3>
+<p>El tamaño de cada globo es
+<code>máx(4, 46 · (stock / máximo de la serie) ^ 0,25)</code>. El ancla
+es absoluta y única para los 34 cuadros: <strong>no</strong> se
+normaliza cada año contra su propio máximo, porque eso haría parecer que
+todos los destinos crecen igual y borraría la magnitud.</p>
+<p>El exponente se bajó de 0,45 a 0,25 porque con 0,45 la mayoría de los
+destinos quedaba pegada al piso de 4 píxeles (17 de 22 en 1995, con la
+mediana en 4,0 px hasta 2018) y el mapa parecía congelado aunque los
+cuadros se actualizaran. Con 0,25 la mediana pasa de 8,8 px en 1995 a
+18,8 px en 2023 y las observaciones-año contra el piso caen de 474 a 45
+sobre 748. Se descartaron la normalización por año, un ancla por
+percentil p95/p99 con el exponente original y la escala logarítmica
+entre mínimo y máximo del conjunto, que correlaciona 1,000 con el dato
+pero aplasta el rango útil.</p>
+<p>El mapa animado usa el stock de Abel (estimación de modelos) y no el
+registro de R4V, que no existe antes de 2018. Esa es la razón técnica
+por la que la serie larga solo puede arrancar en 1990. El detalle
+numérico, año por año y antes y después del cambio, queda en
+<code>output/diagnostico_globos.csv</code>.</p>
+<h3 id="paleta">Paleta</h3>
+<p>Todas las figuras —series, mapas, radiales, regímenes y pirámide—
+toman el color de la paleta declarada al inicio de
+<code>src/tablero.py</code>, y los dos scripts de R declaran los mismos
+tonos. Los nombres son funcionales y no cromáticos: un mismo concepto
+usa el mismo color en todas las figuras. El rojo está reservado para
+Venezuela y para lo que hay que mirar, el gris apagado para lo que no es
+el dato, y no hay dos grises ni dos verdes cumpliendo la misma
+función.</p>
+<h2 id="8-cobertura">8. Cobertura</h2>
+<table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Alcance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flujos (Abel 2025)</td>
+<td>22 destinos americanos más España, 1990–2023</td>
+</tr>
+<tr>
+<td>Stock administrativo (R4V)</td>
+<td>17 países, febrero de 2018 a agosto de 2026</td>
+</tr>
+<tr>
+<td>Censos</td>
+<td>Argentina 2010 y 2022, Chile 2024</td>
+</tr>
+<tr>
+<td>Sistema regional</td>
+<td>19 países, 342 corredores por período, 1990–2023</td>
+</tr>
+<tr>
+<td>Regímenes (FMR)</td>
+<td>156 corredores sudamericanos, 1995–2022</td>
+</tr>
+</tbody>
+</table>
+<p>Dos advertencias de comparabilidad de los censos. El universo de
+actividad es 14+ en los censos argentinos y 15+ en el chileno, así que
+la comparación de condición de actividad entre los tres no es exacta. Y
+Chile no distingue el nivel educativo en curso del completado: su
+variable oficial codifica lo completado, de modo que las categorías
+«incompleto» quedan estructuralmente en cero. No es dato faltante, es
+límite de la variable.</p>
+<p>Los nombres de provincia se normalizaron entre censos. El de 2010
+escribe «Río negro» y el de 2022 «Río Negro»; sin normalizar, la
+comparación arroja provincias enteras en cero.</p>
+<h2 id="9-qué-se-construyó">9. Qué se construyó</h2>
+<p>Dos paneles de flujos y un conjunto de derivados regionales.</p>
+<p><code>data/panel_venezuela.csv</code> y
+<code>data/panel_bolivia.csv</code> son los flujos anuales de Abel 2025
+para 22 destinos americanos más España, con la desviación estándar de la
+estimación y el stock de la misma fuente. Venezuela cubre 1990–2023 y
+Bolivia 2015–2023.</p>
+<p><code>data/panel_r4v_anual.csv</code> es el stock R4V al último mes
+informado de cada año, por país. Se toma el último mes y no el promedio
+porque la serie es un acumulado que se revisa en ambas direcciones.</p>
+<p><code>src/panel_regional.py</code> recorta la matriz bilateral
+completa de Abel al sistema de 19 países y escribe
+<code>data/regional_periodos.csv</code>,
+<code>data/regional_corredores.csv</code> y
+<code>data/regional_serie_anual.csv</code>.</p>
+<p><code>output/tablero_venezolanos.html</code> es el tablero, un
+archivo único sin dependencias externas, con plotly y los radiales
+embebidos en línea.</p>
+<h2 id="10-reproducibilidad">10. Reproducibilidad</h2>
+<p>Todo el tablero se regenera con los scripts de <code>src/</code>. Los
+datos derivados y las salidas están en <code>data/</code> y
+<code>output/</code>. El orden importa:</p>
+<ol type="1">
+<li><code>python3 src/panel.py</code> y
+<code>python3 src/panel_regional.py</code> — los derivados de
+flujos.</li>
+<li><code>Rscript src/radial_regional.R</code> y
+<code>Rscript src/radial_periodos.R</code> — los SVG en
+<code>output/radiales/</code>.</li>
+<li><code>python3 src/tablero.py</code> — el HTML, que embebe los
+SVG.</li>
+</ol>
+<p>Si los SVG no existen el tablero se genera igual y avisa en pantalla
+qué falta, en vez de romperse. Los tres verificadores
+(<code>src/verificar_render.py</code>,
+<code>src/verificar_interactivo.py</code>,
+<code>src/verificar_etiquetas.py</code>) son herramientas de control y
+no forman parte del pipeline.</p>
+<h2 id="11-pendientes">11. Pendientes</h2>
+<ol type="1">
+<li><strong>El dataset de medidas migratorias es un borrador sin
+verificar.</strong> Se armó con los portales oficiales bloqueando y se
+apoya en fuentes secundarias. Hay que confirmar números de norma y
+fechas contra los boletines oficiales antes de usar cualquier fila. Solo
+el TPS estadounidense tiene fuente primaria.</li>
+<li>La diferencia de 5.067 personas entre el total del gráfico de
+Flourish y el que informa la página de R4V.</li>
+<li>El contraste con Bolivia está a medias: hay flujos comparables, pero
+no hay stock boliviano equivalente. Habría que ir a censos o a registros
+migratorios nacionales.</li>
+<li>Falta incorporar la tercera fuente independiente para triangular: el
+stock bilateral por origen y destino de UN DESA
+(<code>ims_stock_by_sex_destination_and_origin.xlsx</code>, 6,4
+MB).</li>
+<li>Los cortes de la codificación de regímenes marcados como discutibles
+en la sección 6 están pendientes de revisión en la notebook del proyecto
+<code>movilidades_regionales</code>.</li>
+</ol>
+</body>
+</html>
