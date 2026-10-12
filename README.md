@@ -1,46 +1,12 @@
-# Emigración venezolana en América
+# MIGMOBS LATAM — Migration and Mobility in the Americas
 
-Tablero exploratorio sobre la emigración venezolana en el continente americano,
-con Bolivia como contraste.
+Draft dashboard of the [MIGMOBS](https://www.ucc.ie/en/migmobs/) project (ERC Advanced Grant,
+University College Cork), Latin American component.
 
-**Centro de Inteligencia Artificial Interdisciplinario (CIAI-ECyT) · UNSAM**
-Grupo Trazas Digitales — Natalia Debandi | ndebandi@unsam.edu.ar
+- English: `en/index.html` · Español: `es/index.html`
+- Site: https://natdebandi.github.io/migmobs-latam/
 
-## Qué contiene
+Natalia Debandi (CONICET – CIAI-UNSAM) · Tobias Grohmann (EUI) · Ana Paula Penchaszadeh (CONICET – UBA).
+Draft version, being developed by Natalia Debandi and Trazas Digitales / CIAI-UNSAM.
 
-Un solo archivo, `index.html`, autocontenido: los datos y la librería de
-gráficos viajan adentro. Se abre con doble clic y no necesita servidor.
-
-Secciones: flujos anuales (Abel 2025), stock registrado (R4V), el crecimiento
-año a año en mapa animado, serie larga 1990–2023, composición por sexo y edad,
-censos nacionales de Argentina 2010/2022 y Chile 2024, perfil sociodemográfico,
-y notas metodológicas.
-
-## Fuentes
-
-| Fuente | Qué mide | Cobertura |
-|---|---|---|
-| Abel 2025 | flujos bilaterales anuales | 1990–2023, 22 destinos |
-| R4V | stock administrativo por país de acogida | feb-2018 a ago-2026, 17 países |
-| Censos | stock por lugar de nacimiento | Argentina 2010 y 2022, Chile 2024 |
-
-No se suman entre sí: son medidas distintas.
-
-## Advertencia
-
-El salto de 2018 en la serie de flujos (286.271 a 2.542.218) no es un error de
-magnitud sino una convención de rezago del modelo: el flujo etiquetado como año
-`t` corresponde al cambio de stock entre `t` y `t+1`. La lectura correcta es el
-bienio 2018–2019. Está desarrollado en las notas metodológicas del tablero.
-
-El stock de R4V es un piso, no un techo: no incluye a las personas en situación
-irregular que no figuran en los registros oficiales.
-
-## Reproducir
-
-El código está en el repositorio de trabajo (`venezuela_regional`, privado).
-Este repositorio solo publica la salida.
-
-## Licencia
-
-Los datos son de las fuentes citadas. Elaboración propia.
+Static site generated from the `movilidades_regionales` repository (`src/tablero_v3.py web`).
