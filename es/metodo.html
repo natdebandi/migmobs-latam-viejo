@@ -1,0 +1,87 @@
+<!doctype html><html lang='es'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><title>Documento metodológico · migmobs.latam</title><style>
+:root { --fondo:#f4f3ef; --card:#fcfcfb; --t1:#0b0b0b; --t2:#52514e; --t3:#7a7974;
+        --linea:#e6e5e0; --acento:#2a78d6; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--fondo); color:var(--t1);
+       font-family: Inter, 'Segoe UI', Roboto, sans-serif; line-height:1.5; }
+header { position:sticky; top:0; z-index:10; background:rgba(252,252,251,.94);
+         backdrop-filter: blur(6px); border-bottom:1px solid var(--linea);
+         display:flex; justify-content:space-between; align-items:center;
+         padding:.6em 1.5em; flex-wrap:wrap; gap:.5em; }
+.marca { font-size:.85em; color:var(--t2); letter-spacing:.02em; }
+nav a { color:var(--t2); text-decoration:none; margin-left:1.2em; font-size:.95em;
+        padding-bottom:.2em; }
+nav a.on { color:var(--t1); font-weight:600; border-bottom:2px solid var(--acento); }
+main { max-width:1180px; margin:0 auto; padding:1.5em 1em 4em; }
+h1 { font-size:1.9em; margin:.4em 0 .2em; letter-spacing:-.01em; }
+h2 { font-size:1.25em; margin:2.2em 0 .8em; color:var(--t1);
+     border-left:4px solid var(--acento); padding-left:.6em; }
+.card { background:var(--card); border:1px solid var(--linea); border-radius:12px;
+        padding:1.1em 1.3em .9em; margin:0 0 1.4em; box-shadow:0 1px 2px rgba(0,0,0,.03); }
+.card h3 { margin:0 0 .5em; font-size:1.05em; font-weight:600; }
+.sel { margin:.2em 0 .4em; display:flex; flex-wrap:wrap; gap:.35em; }
+.b { background:#fff; border:1px solid #d6d5cf; border-radius:999px; color:var(--t2);
+     padding:.25em .9em; font-size:.88em; cursor:pointer; font-family:inherit; }
+.b:hover { border-color:var(--acento); color:var(--t1); }
+.b.on { background:var(--t1); border-color:var(--t1); color:#fff; }
+.oculto { display:none; }
+.lectura { margin:.6em 0 .2em; font-size:.92em; color:var(--t1); }
+.fuente { margin:.2em 0 0; font-size:.78em; color:var(--t3); }
+.def { margin:-.2em 0 .6em; font-size:.86em; color:var(--t2); max-width:900px; }
+footer { border-top:1px solid var(--linea); color:var(--t3); font-size:.82em;
+         padding:1.5em 1em 3em; text-align:center; }
+footer a { color:var(--t2); }
+.equipo { display:flex; flex-wrap:wrap; gap:.4em 1.6em; margin:.4em 0; }
+.equipo-bloque { margin:1.6em 0 .4em; padding-top:1.1em; border-top:1px solid var(--linea); }
+.nota-franja { margin:2.2em 0 0; padding-top:1em; border-top:1px solid var(--linea);
+               font-size:.82em; color:var(--t3); max-width:900px; }
+.nota-franja + .nota-franja { margin-top:.7em; padding-top:0; border-top:0; }
+.equipo span { color:var(--t2); }
+.equipo b { color:var(--t1); font-weight:600; }
+.equipo a, footer a { color:var(--acento); text-decoration:none; }
+.equipo { flex-direction:column; gap:.2em; }
+.portada .lead { font-size:1.08em; color:var(--t1); max-width:860px; }
+.portada .lead a { color:var(--acento); text-decoration:none; }
+.grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1em; }
+ul.fuentes li { margin-bottom:.35em; }
+.fuente span + span:before { content:" · "; }
+code { font-size:.95em; background:#efeee9; padding:0 .25em; border-radius:3px; }
+.svg-radial { max-width:760px; margin:0 auto; }
+.svg-radial svg { width:100%; height:auto; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:1.2em; }
+@media (max-width:820px) { .grid2 { grid-template-columns:1fr; } }
+.portada a.card { display:block; text-decoration:none; color:inherit; }
+.portada a.card:hover { border-color:var(--acento); }
+.portada p { color:var(--t2); margin:.2em 0; }
+.draft { display:inline-block; background:#fef3c7; color:#92400e; font-size:.72em;
+         font-weight:700; letter-spacing:.06em; padding:.1em .55em; border-radius:4px;
+         margin-left:.6em; vertical-align:middle; }
+.idioma { margin-left:1.4em; font-size:.85em; border:1px solid #d6d5cf; border-radius:999px;
+          padding:.1em .7em; color:var(--t2); text-decoration:none; }
+.idioma:hover { border-color:var(--acento); color:var(--t1); }
+.metodo li { margin-bottom:.45em; }
+.asociado { border-left:4px solid var(--acento); }
+.asociado a, .fuente a, .fuentes a { color:var(--acento); text-decoration:none; }
+</style></head><body><header><div class='marca'>Migración y movilidad en América · <b>migmobs.latam</b><span class='draft'>DRAFT</span></div><nav><a href='index.html' class=''>Inicio</a><a href='america.html' class=''>América</a><a href='sudamerica.html' class=''>Sudamérica</a><a href='venezuela.html' class=''>Venezuela</a><a href='regimenes.html' class=''>Libre movilidad</a><a href='censos.html' class=''>Venezuela y Bolivia</a><a href='metodo.html' class='on'>Método</a><a class='idioma' href='../en/metodo.html'>English</a></nav></header><main><h1>Documento metodológico</h1><div class='portada'><p class='lead'>Qué mide cada serie, cómo se calcula cada indicador y qué precauciones de lectura hay que tener en cuenta.</p><p class='fuente'>Documento vivo, actualizado el 17/10/2026. Los resúmenes de cada tarjeta están en las claves para leer los datos, en la portada.</p></div><h2>Qué mide cada serie</h2><div class='card'><h3>Migración</h3><p>Personas que cambian de país de residencia. Es lo que en la fuente se llama <em>mig_prev</em>: el flujo se identifica por el país de residencia previa, no por el de nacimiento. La serie es anual y cubre 1990–2023.</p></div><div class='card'><h3>Visitantes</h3><p>Personas que cruzan una frontera internacional <strong>sin</strong> cambiar de país de residencia habitual. Incluye viajes de un día y con pernocte, cualquiera sea el motivo: turismo, trabajo, visitas a familiares, estudio, salud, compras o tránsito. Es la categoría <em>gtmd2_vflow_int</em> y cubre 1995–2022.</p></div><div class='card'><h3>Movilidad</h3><p>La suma de las dos anteriores. La fuente la llama <em>gtmd2_mobflow</em> y la define literalmente como <em>international visitors + migrants</em>. Migrantes y visitantes son categorías disjuntas: la diferencia entre uno y otro es si el cruce cambia o no la residencia habitual, de modo que ninguna persona cae en las dos.</p></div><h2>Unidades y denominadores</h2><div class='card'><h3>Se cuentan cruces, no personas</h3><p>Un migrante aparece una sola vez en el flujo del año en que cambia de residencia. Un visitante, en cambio, puede sumar varias llegadas en el mismo año si viaja más de una vez o visita varios países. Por eso la suma de migrantes y visitantes es un conteo de <strong>eventos de viaje</strong>, no de individuos distintos, y por eso los porcentajes que la usan como denominador no tienen por qué sumar cien.</p></div><div class='card'><h3>Viajes por migrante</h3><p>Llegadas de visitantes divididas por personas migrantes en el mismo corredor y período. No es una tasa por habitante: el denominador son quienes migraron, no la población. Un valor de 50 significa que por cada persona que se mudó hubo cincuenta cruces de visitantes en sentido contrario.</p></div><div class='card'><h3>Porcentaje de migrantes</h3><p>Migrantes divididos por la movilidad total, es decir migrantes más llegadas de visitantes. Dice qué parte de los cruces de un corredor corresponde a personas que cambiaron de residencia. Es el recíproco exacto de uno más el cociente anterior: porcentaje = 100 / (1 + cociente). Las dos lecturas son la misma información en escalas distintas.</p></div><div class='card'><h3>Escalas fijas entre paneles</h3><p>En los mapas de calor la escala de color es la misma en todos los períodos. Si cada panel se reescalara a su propio máximo, los cambios entre períodos se volverían invisibles. El costo es que un período con valores bajos se vea pálido.</p></div><div class='card'><h3>Franjas grises en las series</h3><p>Los años 2022 y 2023 se marcan en gris donde la serie de migración puede estar alterada por el propio modelo de estimación: el modelo se aleja del stock de UN DESA y lo corrige de golpe para coincidir con el dato de 2024. Se ve como picos de un año. Conviene leer esos años como promedio y no año por año.</p></div><div class='card'><h3>Desfase de un año</h3><p>En la serie de migración, el flujo etiquetado con el año <em>t</em> es el cambio entre <em>t</em> y <em>t+1</em>: el pico venezolano de 2018 corresponde al movimiento de 2018–2019. Los stocks se ubican al 1 de enero.</p></div><h2>Cobertura y datos faltantes</h2><div class='card'><h3>Visitantes</h3><p>Las llegadas salen de las estadísticas de turismo que reporta cada país, que son incompletas: solo entre un tercio y la mitad de los pares de países de América tiene dato en un año dado. Las sumas son un piso y los corredores sin dato no se suman como cero. No hay llegadas a Venezuela después de 2017.</p></div><div class='card'><h3>Migración</h3><p>La serie es una estimación modelada, no un registro administrativo: cubre todos los corredores, incluidos los que ningún país reporta. Eso la vuelve completa pero también la expone a los artefactos del modelo descritos más arriba.</p></div><div class='card'><h3>Registros de R4V</h3><p>R4V cuenta personas registradas por los gobiernos de 17 países de América Latina y el Caribe, no personas que llegaron. Es un piso y sus saltos pueden reflejar procesos de regularización más que arribos, como ocurre con Colombia en 2022. No cubre Estados Unidos ni España.</p></div><div class='card'><h3>Censos</h3><p>Los censos cuentan población por país de nacimiento. Argentina no pregunta nacionalidad, así que no distingue personas nacidas en Venezuela que migraron con nacionalidad colombiana, por ejemplo. Los totales son comparables entre censos, no con las series de flujo.</p></div><div class='card'><h3>Stocks de UN DESA</h3><p>UN DESA publica stocks cada cinco años y una estimación para 2024. Las líneas que unen los puntos de un gráfico son solo una guía visual, no una interpolación estimada.</p></div><h2>Fuentes</h2><div class='card'><ul class='fuentes'><li>Gaskin, T. & Abel, G. J. (2026). Deep learning four decades of human migration. <em>Nature</em>. doi:10.1038/s41586-026-10611-7. Flujo anual por país de residencia previa (<code>mig_prev</code>).</li><li>Gaskin, T. & Abel, G. J. (2026). Deep learning four decades of human migration. <em>Nature</em>. doi:10.1038/s41586-026-10611-7. Flujo por país de nacimiento (<code>mig_brth</code>); retorno = nacidos en Venezuela que llegan a Venezuela.</li><li>Gaskin, T. & Abel, G. J. (2026). Deep learning four decades of human migration. <em>Nature</em>. doi:10.1038/s41586-026-10611-7. Stock por país de nacimiento (<code>stock_mean</code>), al 1 de enero.</li><li>Grohmann, T., Recchi, E. y Bernasconi, L. (2025). The 10 Billion Travel World: Continuity and Change in Global Transnational Mobility (1995–2022). Global Transnational Mobility Dataset (GTMD2). Visitantes internacionales (<code>gtmd2_vflow_int</code>); corredores sin dato no se suman.</li><li>Naciones Unidas, División de Población. <em>World Population Prospects</em>, población total (vía GTMD2).</li><li>Naciones Unidas, DAES, División de Población (2024). <em>International Migrant Stock 2024</em>. Población nacida en Venezuela por país de residencia.</li><li>Plataforma R4V. <em>Refugiados y migrantes de Venezuela</em>, población registrada por los gobiernos de 17 países de América Latina y el Caribe, feb. 2018 – ago. 2026. Consulta: 11/10/2026.</li><li>INDEC. <em>Censo Nacional de Población, Hogares y Viviendas</em> 2010 y 2022. Población nacida en Venezuela y en Bolivia; procesamiento propio de microdatos (2010) y REDATAM (2022).</li><li>INE Chile. <em>Censo de Población y Vivienda 2024</em>. Población nacida en Venezuela y en Bolivia; procesamiento propio de microdatos.</li><li>Acosta, D. y van der Baaren, L. (2026). Introducing the Freemove Dataset: A regional analysis of free movement regimes in Latin America and the Caribbean. <em>International Migration</em> (en prensa). <a href='http://www.freemovehub.com/'>freemovehub.com</a>.</li><li>Grohmann, T. Codificación de regímenes de libre movilidad por corredor y año (dummies por régimen, perspectiva del país de destino), a partir de Freemove. Proyecto MIGMOBS.</li></ul></div><h2>Reproducibilidad</h2><div class='card'><h3>Cómo se genera el tablero</h3><p>Cada página se genera desde un módulo de Python con un único comando: <code>python src/tablero_v3.py web</code> produce las versiones en castellano y en inglés en <code>docs/</code>. Las figuras son objetos de Plotly escritos en el propio HTML, sin dependencias externas más allá de la librería. Los datos de trabajo son derivados de las fuentes originales y no se versionan en el repositorio.</p></div></main><footer>Proyecto <a href='https://www.ucc.ie/en/migmobs/'>MIGMOBS</a> · <a href='mailto:ndebandi@unsam.edu.ar'><b>Natalia Debandi</b></a> (CONICET – <a href='https://www.unsam.edu.ar/escuelas/ecyt/centros/ciai.php' title='Centro de Inteligencia Artificial Interdisciplinario'>CIAI</a>-UNSAM, <a href='mailto:ndebandi@unsam.edu.ar'>ndebandi@unsam.edu.ar</a>) · Adrian Favell (UCC) · Tobias Grohmann (EUI) · Ana Paula Penchaszadeh (CONICET – UBA) · Ettore Recchi (Sciences Po)<br>Versión borrador, en elaboración por Natalia Debandi / <a href='https://www.unsam.edu.ar/escuelas/ecyt/centros/ciai.php' title='Centro de Inteligencia Artificial Interdisciplinario'>CIAI</a>-UNSAM.</footer><script>
+function elegir(btn) {
+  var card = btn.closest('.card');
+  card.querySelectorAll(".b[data-dim='" + btn.dataset.dim + "']").forEach(function (b) {
+    b.classList.toggle('on', b === btn);
+  });
+  var vals = [];
+  card.querySelectorAll('.sel').forEach(function (fila) {
+    var on = fila.querySelector('.b.on'); if (on) vals.push(on.dataset.val);
+  });
+  var id = 'p-' + vals.join('-');
+  card.querySelectorAll('.lectura[id-l]').forEach(function (l) {
+    l.classList.toggle('oculto', l.getAttribute('id-l') !== id);
+  });
+  card.querySelectorAll('.panel').forEach(function (p) {
+    var ver = p.getAttribute('id-p') === id;
+    p.classList.toggle('oculto', !ver);
+    if (ver && window.Plotly) p.querySelectorAll('.js-plotly-plot').forEach(function (g) {
+      Plotly.Plots.resize(g);
+    });
+  });
+}
+</script></body></html>
